@@ -1,0 +1,86 @@
+﻿@model IEnumerable<SamsungTest1.Models.usuario>
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="right_col" role="main" style="width: 100%">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>ADMINISTRADORES</h3>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>AGREGAR NUEVO ADMINISTRADOR</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br />
+                        <form class="form-horizontal form-label-left" id="form" action="@Url.Action("Create", "MainPanel")" method="post">
+
+                            <div class="form-group">
+                                <label class="control-label col-md-5 col-sm-5 col-xs-12" style="text-align: left;">Usuario </label>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <input type="text" name="usuario" class="form-control" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-5 col-sm-5 col-xs-12" style="text-align: left;">Nombre </label>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <input type="text" name="nombre" class="form-control" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-5 col-sm-5 col-xs-12" style="text-align: left;">Apellidos </label>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <input type="text" name="apellidos" class="form-control" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-5 col-sm-5 col-xs-12" style="text-align: left;">Email </label>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <input type="text" name="email" class="form-control" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-12 col-sm-12 col-xs-12" style="text-align: left;">Contrase&ntilde;a* </label>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="input-group" style="width: 60%;">
+                                        <input value="" id="password_show" name="contrasenia" type="password" class="form-control">
+                                        <span style="width:0%" id="password_show_button" class="input-group-addon"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ln_solid"></div>
+
+                            <div class="form-group">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" id="boton" onclick="this.form.submit()" class="btn btn-success"> <i class="fa fa-floppy-o" aria-hidden="true"></i> REGISTRAR</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<script>
+
+</script>
+

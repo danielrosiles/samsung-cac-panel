@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="hyperiondg_samsung_sales_forceModelStoreContainer" CdmEntityContainer="hyperiondg_samsung_sales_forceEntities">
+    <EntitySetMapping Name="banner">
+      <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.banner">
+        <MappingFragment StoreEntitySet="banner">
+          <ScalarProperty Name="id_banner" ColumnName="id_banner" />
+          <ScalarProperty Name="banner1" ColumnName="banner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cliente">
+      <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.cliente">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="plan" ColumnName="plan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="equipo">
+      <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.equipo">
+        <MappingFragment StoreEntitySet="equipo">
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="brochure" ColumnName="brochure" />
+          <ScalarProperty Name="C3D_producto" ColumnName="3D_producto" />
+          <ScalarProperty Name="video_producto" ColumnName="video_producto" />
+          <ScalarProperty Name="imagen_3" ColumnName="imagen_3" />
+          <ScalarProperty Name="imagen_2" ColumnName="imagen_2" />
+          <ScalarProperty Name="imagen_1" ColumnName="imagen_1" />
+          <ScalarProperty Name="id_equipo" ColumnName="id_equipo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="disponibilidad" ColumnName="disponibilidad" />
+          <ScalarProperty Name="camara" ColumnName="camara" />
+          <ScalarProperty Name="procesador" ColumnName="procesador" />
+          <ScalarProperty Name="pantalla" ColumnName="pantalla" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="familia" ColumnName="familia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plantelcel">
+      <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.plantelcel">
+        <MappingFragment StoreEntitySet="plantelcel">
+          <ScalarProperty Name="id_plantelcel" ColumnName="id_plantelcel" />
+          <ScalarProperty Name="plantelcel1" ColumnName="plantelcel" />
+          <ScalarProperty Name="pago" ColumnName="pago" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="mensajes" ColumnName="mensajes" />
+          <ScalarProperty Name="minutos" ColumnName="minutos" />
+          <ScalarProperty Name="internet" ColumnName="internet" />
+          <ScalarProperty Name="redes" ColumnName="redes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vendedor">
+      <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.vendedor">
+        <MappingFragment StoreEntitySet="vendedor">
+          <ScalarProperty Name="id_vendedor" ColumnName="id_vendedor" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="imei" ColumnName="imei" />
+          <ScalarProperty Name="operador" ColumnName="operador" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="novendedor" ColumnName="novendedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+          <ScalarProperty Name="usuario1" ColumnName="usuario" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Id_administrador" ColumnName="Id_administrador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="samsung_vendedores">
+      <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.samsung_vendedores">
+        <MappingFragment StoreEntitySet="samsung_vendedores">
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="region" ColumnName="region" />
+          <ScalarProperty Name="operador" ColumnName="operador" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Id_vendedores" ColumnName="Id_vendedores" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="samsung_cliente">
+      <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.samsung_cliente">
+        <MappingFragment StoreEntitySet="samsung_cliente">
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="perfil" ColumnName="perfil" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Id_cliente" ColumnName="Id_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

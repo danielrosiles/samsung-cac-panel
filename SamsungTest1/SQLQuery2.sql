@@ -1,0 +1,1 @@
+﻿UPDATE [dbo].[usuario] SET [nombre]='Jorge' ,[apellido]='Osorio Hernandez', [email]='joso@gmail.com', [usuario]='josorio', [contrasenia]='secret',[fecha_creacion]='joso@gmail.com' WHERE Id_administrador = 2

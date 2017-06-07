@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="hyperiondg_samsung_sales_forceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="samsung_cliente">
+          <Key>
+            <PropertyRef Name="Id_cliente" />
+          </Key>
+          <Property Name="Id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="perfil" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="usuario" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="fecha_creacion" Type="nvarchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="samsung_vendedores">
+          <Key>
+            <PropertyRef Name="Id_vendedores" />
+          </Key>
+          <Property Name="Id_vendedores" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="numero" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="operador" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="region" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="fecha_creacion" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="Id_administrador" />
+          </Key>
+          <Property Name="Id_administrador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="contrasenia" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fecha_creacion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellido" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'hyperiondg_samsung_sales_force.hyper_hyperiondg.banner' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="banner">
+          <Key>
+            <PropertyRef Name="id_banner" />
+            <PropertyRef Name="banner" />
+          </Key>
+          <Property Name="id_banner" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="banner" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'hyperiondg_samsung_sales_force.hyper_hyperiondg.cliente' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="sexo" />
+            <PropertyRef Name="telefono" />
+            <PropertyRef Name="plan" />
+          </Key>
+          <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="sexo" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="plan" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'hyperiondg_samsung_sales_force.hyper_hyperiondg.equipo' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="equipo">
+          <Key>
+            <PropertyRef Name="id_equipo" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="sku" />
+            <PropertyRef Name="disponibilidad" />
+            <PropertyRef Name="camara" />
+            <PropertyRef Name="procesador" />
+            <PropertyRef Name="pantalla" />
+          </Key>
+          <Property Name="id_equipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="sku" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="disponibilidad" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="camara" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="procesador" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="pantalla" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="descripcion" Type="text" />
+          <Property Name="familia" Type="varchar" MaxLength="256" />
+          <Property Name="imagen_1" Type="varchar" MaxLength="256" />
+          <Property Name="imagen_2" Type="varchar" MaxLength="256" />
+          <Property Name="imagen_3" Type="varchar" MaxLength="256" />
+          <Property Name="video_producto" Type="varchar" MaxLength="256" />
+          <Property Name="3D_producto" Type="varchar" MaxLength="256" />
+          <Property Name="brochure" Type="varchar" MaxLength="256" />
+          <Property Name="fecha_creacion" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'hyperiondg_samsung_sales_force.hyper_hyperiondg.plantelcel' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="plantelcel">
+          <Key>
+            <PropertyRef Name="id_plantelcel" />
+            <PropertyRef Name="plantelcel" />
+            <PropertyRef Name="pago" />
+            <PropertyRef Name="categoria" />
+            <PropertyRef Name="mensajes" />
+            <PropertyRef Name="minutos" />
+            <PropertyRef Name="internet" />
+            <PropertyRef Name="redes" />
+          </Key>
+          <Property Name="id_plantelcel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="plantelcel" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="pago" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="categoria" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="mensajes" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="minutos" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="internet" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="redes" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'hyperiondg_samsung_sales_force.hyper_hyperiondg.vendedor' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="vendedor">
+          <Key>
+            <PropertyRef Name="id_vendedor" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="sexo" />
+            <PropertyRef Name="usuario" />
+            <PropertyRef Name="edad" />
+            <PropertyRef Name="imei" />
+          </Key>
+          <Property Name="id_vendedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="sexo" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="edad" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="imei" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="operador" Type="varchar" MaxLength="256" />
+          <Property Name="region" Type="varchar" MaxLength="256" />
+          <Property Name="novendedor" Type="varchar" MaxLength="256" />
+        </EntityType>
+        <EntityContainer Name="hyperiondg_samsung_sales_forceModelStoreContainer">
+          <EntitySet Name="samsung_cliente" EntityType="Self.samsung_cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="samsung_vendedores" EntityType="Self.samsung_vendedores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="banner" EntityType="Self.banner" store:Type="Tables" store:Schema="hyper_hyperiondg">
+            <DefiningQuery>SELECT 
+    [banner].[id_banner] AS [id_banner], 
+    [banner].[banner] AS [banner]
+    FROM [hyper_hyperiondg].[banner] AS [banner]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="cliente" EntityType="Self.cliente" store:Type="Tables" store:Schema="hyper_hyperiondg">
+            <DefiningQuery>SELECT 
+    [cliente].[id_cliente] AS [id_cliente], 
+    [cliente].[nombre] AS [nombre], 
+    [cliente].[sexo] AS [sexo], 
+    [cliente].[telefono] AS [telefono], 
+    [cliente].[plan] AS [plan]
+    FROM [hyper_hyperiondg].[cliente] AS [cliente]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="equipo" EntityType="Self.equipo" store:Type="Tables" store:Schema="hyper_hyperiondg">
+            <DefiningQuery>SELECT 
+    [equipo].[id_equipo] AS [id_equipo], 
+    [equipo].[nombre] AS [nombre], 
+    [equipo].[sku] AS [sku], 
+    [equipo].[disponibilidad] AS [disponibilidad], 
+    [equipo].[camara] AS [camara], 
+    [equipo].[procesador] AS [procesador], 
+    [equipo].[pantalla] AS [pantalla], 
+    [equipo].[descripcion] AS [descripcion], 
+    [equipo].[familia] AS [familia], 
+    [equipo].[imagen_1] AS [imagen_1], 
+    [equipo].[imagen_2] AS [imagen_2], 
+    [equipo].[imagen_3] AS [imagen_3], 
+    [equipo].[video_producto] AS [video_producto], 
+    [equipo].[3D_producto] AS [3D_producto], 
+    [equipo].[brochure] AS [brochure], 
+    [equipo].[fecha_creacion] AS [fecha_creacion]
+    FROM [hyper_hyperiondg].[equipo] AS [equipo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="plantelcel" EntityType="Self.plantelcel" store:Type="Tables" store:Schema="hyper_hyperiondg">
+            <DefiningQuery>SELECT 
+    [plantelcel].[id_plantelcel] AS [id_plantelcel], 
+    [plantelcel].[plantelcel] AS [plantelcel], 
+    [plantelcel].[pago] AS [pago], 
+    [plantelcel].[categoria] AS [categoria], 
+    [plantelcel].[mensajes] AS [mensajes], 
+    [plantelcel].[minutos] AS [minutos], 
+    [plantelcel].[internet] AS [internet], 
+    [plantelcel].[redes] AS [redes]
+    FROM [hyper_hyperiondg].[plantelcel] AS [plantelcel]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vendedor" EntityType="Self.vendedor" store:Type="Tables" store:Schema="hyper_hyperiondg">
+            <DefiningQuery>SELECT 
+    [vendedor].[id_vendedor] AS [id_vendedor], 
+    [vendedor].[nombre] AS [nombre], 
+    [vendedor].[sexo] AS [sexo], 
+    [vendedor].[usuario] AS [usuario], 
+    [vendedor].[edad] AS [edad], 
+    [vendedor].[imei] AS [imei], 
+    [vendedor].[operador] AS [operador], 
+    [vendedor].[region] AS [region], 
+    [vendedor].[novendedor] AS [novendedor]
+    FROM [hyper_hyperiondg].[vendedor] AS [vendedor]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="hyperiondg_samsung_sales_forceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="banner">
+          <Key>
+            <PropertyRef Name="id_banner" />
+            <PropertyRef Name="banner1" />
+          </Key>
+          <Property Name="id_banner" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="banner1" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="sexo" />
+            <PropertyRef Name="telefono" />
+            <PropertyRef Name="plan" />
+          </Key>
+          <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sexo" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="plan" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="equipo">
+          <Key>
+            <PropertyRef Name="id_equipo" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="sku" />
+            <PropertyRef Name="disponibilidad" />
+            <PropertyRef Name="camara" />
+            <PropertyRef Name="procesador" />
+            <PropertyRef Name="pantalla" />
+          </Key>
+          <Property Name="id_equipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sku" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="disponibilidad" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="camara" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="procesador" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pantalla" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="familia" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="imagen_1" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="imagen_2" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="imagen_3" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="video_producto" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="C3D_producto" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="brochure" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_creacion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="plantelcel">
+          <Key>
+            <PropertyRef Name="id_plantelcel" />
+            <PropertyRef Name="plantelcel1" />
+            <PropertyRef Name="pago" />
+            <PropertyRef Name="categoria" />
+            <PropertyRef Name="mensajes" />
+            <PropertyRef Name="minutos" />
+            <PropertyRef Name="internet" />
+            <PropertyRef Name="redes" />
+          </Key>
+          <Property Name="id_plantelcel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="plantelcel1" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pago" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="categoria" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mensajes" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="minutos" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="internet" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="redes" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vendedor">
+          <Key>
+            <PropertyRef Name="id_vendedor" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="sexo" />
+            <PropertyRef Name="usuario" />
+            <PropertyRef Name="edad" />
+            <PropertyRef Name="imei" />
+          </Key>
+          <Property Name="id_vendedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sexo" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usuario" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="edad" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="imei" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="operador" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="region" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="novendedor" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="hyperiondg_samsung_sales_forceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="banner" EntityType="Self.banner" />
+          <EntitySet Name="cliente" EntityType="Self.cliente" />
+          <EntitySet Name="equipo" EntityType="Self.equipo" />
+          <EntitySet Name="plantelcel" EntityType="Self.plantelcel" />
+          <EntitySet Name="vendedor" EntityType="Self.vendedor" />
+          <EntitySet Name="usuario" EntityType="hyperiondg_samsung_sales_forceModel.usuario" />
+          <EntitySet Name="samsung_vendedores" EntityType="hyperiondg_samsung_sales_forceModel.samsung_vendedores" />
+          <EntitySet Name="samsung_cliente" EntityType="hyperiondg_samsung_sales_forceModel.samsung_cliente" />
+        </EntityContainer>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="Id_administrador" />
+          </Key>
+          <Property Name="Id_administrador" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="usuario1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contrasenia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fecha_creacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="apellido" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="samsung_vendedores">
+          <Key>
+            <PropertyRef Name="Id_vendedores" />
+          </Key>
+          <Property Name="Id_vendedores" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="numero" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="operador" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="region" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fecha_creacion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="samsung_cliente">
+          <Key>
+            <PropertyRef Name="Id_cliente" />
+          </Key>
+          <Property Name="Id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="perfil" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="usuario" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fecha_creacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="hyperiondg_samsung_sales_forceModelStoreContainer" CdmEntityContainer="hyperiondg_samsung_sales_forceEntities">
+          <EntitySetMapping Name="banner">
+            <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.banner">
+              <MappingFragment StoreEntitySet="banner">
+                <ScalarProperty Name="id_banner" ColumnName="id_banner" />
+                <ScalarProperty Name="banner1" ColumnName="banner" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cliente">
+            <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="plan" ColumnName="plan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="equipo">
+            <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.equipo">
+              <MappingFragment StoreEntitySet="equipo">
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+                <ScalarProperty Name="brochure" ColumnName="brochure" />
+                <ScalarProperty Name="C3D_producto" ColumnName="3D_producto" />
+                <ScalarProperty Name="video_producto" ColumnName="video_producto" />
+                <ScalarProperty Name="imagen_3" ColumnName="imagen_3" />
+                <ScalarProperty Name="imagen_2" ColumnName="imagen_2" />
+                <ScalarProperty Name="imagen_1" ColumnName="imagen_1" />
+                <ScalarProperty Name="id_equipo" ColumnName="id_equipo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="sku" ColumnName="sku" />
+                <ScalarProperty Name="disponibilidad" ColumnName="disponibilidad" />
+                <ScalarProperty Name="camara" ColumnName="camara" />
+                <ScalarProperty Name="procesador" ColumnName="procesador" />
+                <ScalarProperty Name="pantalla" ColumnName="pantalla" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="familia" ColumnName="familia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="plantelcel">
+            <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.plantelcel">
+              <MappingFragment StoreEntitySet="plantelcel">
+                <ScalarProperty Name="id_plantelcel" ColumnName="id_plantelcel" />
+                <ScalarProperty Name="plantelcel1" ColumnName="plantelcel" />
+                <ScalarProperty Name="pago" ColumnName="pago" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="mensajes" ColumnName="mensajes" />
+                <ScalarProperty Name="minutos" ColumnName="minutos" />
+                <ScalarProperty Name="internet" ColumnName="internet" />
+                <ScalarProperty Name="redes" ColumnName="redes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vendedor">
+            <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.vendedor">
+              <MappingFragment StoreEntitySet="vendedor">
+                <ScalarProperty Name="id_vendedor" ColumnName="id_vendedor" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="imei" ColumnName="imei" />
+                <ScalarProperty Name="operador" ColumnName="operador" />
+                <ScalarProperty Name="region" ColumnName="region" />
+                <ScalarProperty Name="novendedor" ColumnName="novendedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+                <ScalarProperty Name="usuario1" ColumnName="usuario" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="Id_administrador" ColumnName="Id_administrador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="samsung_vendedores">
+            <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.samsung_vendedores">
+              <MappingFragment StoreEntitySet="samsung_vendedores">
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+                <ScalarProperty Name="region" ColumnName="region" />
+                <ScalarProperty Name="operador" ColumnName="operador" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="Id_vendedores" ColumnName="Id_vendedores" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="samsung_cliente">
+            <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.samsung_cliente">
+              <MappingFragment StoreEntitySet="samsung_cliente">
+                <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="perfil" ColumnName="perfil" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="Id_cliente" ColumnName="Id_cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

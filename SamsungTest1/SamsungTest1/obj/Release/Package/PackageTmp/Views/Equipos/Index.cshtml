@@ -1,0 +1,99 @@
+﻿@model IEnumerable<SamsungTest1.Models.equipo>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="x_title">
+                <h3>EQUIPOS</h3>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <div class="title_left" style="width: 60%;">
+                            <div class="col-md-12 col-sm-12 col-xs-12 form-group pull-right top_search">
+                                <div class="input-group">
+                                    <a href="@Url.Action("Create", "Equipos")">
+                                        <button type="button" class="btn btn-default btn-sm">
+                                            <i class="fa fa-mobile" aria-hidden="true"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title_left" style="width: 60%;">
+                            <div class="col-md-12 col-sm-12 col-xs-12 form-group pull-right top_search">
+                                <div class="input-group">
+                                    <a href="subir_vendedores.aspx"><button type="button" class="btn btn-default btn-sm"><i class="fa fa-database" aria-hidden="true"></i> Inportar Productos </button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title_left" style="width: 95%;">
+                            <div class="input-group">
+                                <select class="select2_single form-control" tabindex="-1" id="cat" style="height: 30px;">
+                                    <option>Selecciona la disponibilidad</option>
+                                    <option value="">Disponible</option>
+                                    <option value="">No Disponible</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title_left" style="width: 20%;">
+                            <div class="col-md-12 col-sm-12 col-xs-12 form-group pull-right top_search">
+                                <div class="input-group">
+                                    <button type="button" class="btn btn-primary btn-sm" style="height: 28px;"><i class="fa fa-search" aria-hidden="true"></i> Filtrar </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Aqui van las tablas -->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id="check-all" class="flat"></th>
+                                    <th>Nombre del Producto</th>
+                                    <th>SKU</th>
+                                    <th>Disponibilidad</th>
+                                    <th>Camara</th>
+                                    <th>Procesado</th>
+                                    <th>Pantalla</th>
+                                    <th class=table_edit></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td><input type="checkbox" class="flat" name="table_records"></td>
+                                        <td>@item.nombre</td>
+                                        <td>@item.sku</td>
+                                        <td>@item.disponibilidad</td>
+                                        <td>@item.camara</td>
+                                        <td>@item.procesador</td>
+                                        <td>@item.pantalla</td>
+                                        <td><a href="@Url.Action("Edit", "Equipos", new { id = @item.id_equipo })"><span class="fa fa-edit"></span></a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Aqui terminan las tablas -->
+        </div>
+    </div>
+</div>
+

@@ -100,6 +100,9 @@
     <EntitySetMapping Name="samsung_cliente">
       <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.samsung_cliente">
         <MappingFragment StoreEntitySet="samsung_cliente">
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="usuario" ColumnName="usuario" />

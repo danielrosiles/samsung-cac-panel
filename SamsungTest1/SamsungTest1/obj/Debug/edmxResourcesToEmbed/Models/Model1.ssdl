@@ -10,6 +10,9 @@
     <Property Name="usuario" Type="nvarchar(max)" Nullable="false" />
     <Property Name="email" Type="nvarchar(max)" Nullable="false" />
     <Property Name="fecha_creacion" Type="nvarchar" MaxLength="40" />
+    <Property Name="estado" Type="nvarchar" MaxLength="50" />
+    <Property Name="sexo" Type="nvarchar" MaxLength="10" />
+    <Property Name="edad" Type="int" />
   </EntityType>
   <EntityType Name="samsung_vendedores">
     <Key>

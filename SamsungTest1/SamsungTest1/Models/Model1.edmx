@@ -15,6 +15,9 @@
           <Property Name="usuario" Type="nvarchar(max)" Nullable="false" />
           <Property Name="email" Type="nvarchar(max)" Nullable="false" />
           <Property Name="fecha_creacion" Type="nvarchar" MaxLength="40" />
+          <Property Name="estado" Type="nvarchar" MaxLength="50" />
+          <Property Name="sexo" Type="nvarchar" MaxLength="10" />
+          <Property Name="edad" Type="int" />
         </EntityType>
         <EntityType Name="samsung_vendedores">
           <Key>
@@ -339,6 +342,9 @@ advertencia 6002: La tabla o vista 'hyperiondg_samsung_sales_force.hyper_hyperio
           <Property Name="usuario" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="fecha_creacion" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="edad" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -445,6 +451,9 @@ advertencia 6002: La tabla o vista 'hyperiondg_samsung_sales_force.hyper_hyperio
           <EntitySetMapping Name="samsung_cliente">
             <EntityTypeMapping TypeName="hyperiondg_samsung_sales_forceModel.samsung_cliente">
               <MappingFragment StoreEntitySet="samsung_cliente">
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="usuario" ColumnName="usuario" />

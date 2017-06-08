@@ -73,7 +73,7 @@
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <select class="select2_single form-control" name="id_disponibilidad" tabindex="-1">
                                         <option>Selecciona la disponibilidad</option>
-                                        <option value=0>Disponible</option>
+                                        <option value=0 selected>Disponible</option>
                                         <option value=1>No Disponible</option>
                                     </select>
                                 </div>
@@ -271,91 +271,42 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row"><i class="fa fa-plus-circle" aria-hidden="true"></i></th>
-                                        <td>Galaxy S</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></th>
-                                        <td>Galaxy S7</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></th>
-                                        <td>Galaxy S</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></th>
-                                        <td>Galaxy S7</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row"><i class="fa fa-plus-circle" aria-hidden="true"></i></th>
-                                        <td>Galaxy Note</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row"><i class="fa fa-plus-circle" aria-hidden="true"></i></th>
-                                        <td>Galaxy A</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row"><i class="fa fa-plus-circle" aria-hidden="true"></i></th>
-                                        <td>Galaxy J</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row"><i class="fa fa-plus-circle" aria-hidden="true"></i></th>
-                                        <td>Galaxy Otro</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
+                            <select class="select2_single form-control" name="id_familia" tabindex="-1">
+                                <option>Selecciona la familia</option>
+                                <option value="0">
+                                    <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Galaxy S</a>
+                                </option>
+                                <option value="1" disabled>
+                                    <a href="#"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Galaxy S7</a>
+                                </option>
+                                <option value="2" disabled>
+                                    <a href="#"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Galaxy S</a>
+                                </option>
+                                <option value="3" disabled>
+                                    <a href="#"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Galaxy S7</a>
+                                </option>
+                                <option value="4">
+                                    <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Galaxy Note</a>
+                                </option>
+                                <option value="5">
+                                    <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Galaxy Note</a>
+                                </option>
+                                <option value="6">
+                                    <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Galaxy A</a>
+                                </option>
+                                <option value="7">
+                                    <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Galaxy J</a>
+                                </option>
+                                <option value="8">
+                                    <a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i>Galaxy Otro</a>
+                                </option>
+                            </select>
                         </div>
                     </div>
                 </div>
 
 
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>Familia seleccionada</h2>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-
-                            <!-- start form for validation -->
-                            <form id="demo-form" data-parsley-validate>
-
-                                <input type="text" id="fullname" class="form-control" name="fullname" required />
-
-                                </br>
-                                <button onclick="this.form.submit()" class="btn btn-default">Aceptar</button>
-
-                            </form>
-                            <!-- end form for validations -->
-
-                        </div>
-                    </div>
-                </div>
+                
 
 
             </div>

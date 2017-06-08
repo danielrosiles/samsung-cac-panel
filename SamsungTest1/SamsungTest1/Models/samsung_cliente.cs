@@ -20,5 +20,8 @@ namespace SamsungTest1.Models
         public string usuario { get; set; }
         public string email { get; set; }
         public string fecha_creacion { get; set; }
+        public string estado { get; set; }
+        public string sexo { get; set; }
+        public Nullable<int> edad { get; set; }
     }
 }

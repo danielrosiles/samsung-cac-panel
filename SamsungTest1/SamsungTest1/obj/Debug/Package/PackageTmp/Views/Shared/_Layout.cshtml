@@ -72,14 +72,12 @@
                                 <li><a href="@Url.Action("Index", "MainPanel")"><i class="fa fa-user" style="color: white"></i>Administradores</a></li>
                                 <li><a href="@Url.Action("Index", "Vendedores")"><i class="fa fa-group"></i> Vendedores</a></li>
                                 <li><a href="@Url.Action("Index", "Clientes")"><i class="fa fa-male"></i> Clientes</a></li>
-                                <li><a href="@Url.Action("Index", "Equipos")"><i class="fa fa-mobile"></i> Equipos</a></li>
-                                <li>
-                                    <a><i class="fa fa-image"></i> Galer&iacute;a Multimedia<span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="@Url.Action("Index", "Materiles")">Subir Materiales</a></li>
-                                        <li><a href="@Url.Action("Index", "Multimedia")">Biblioteca Multimedia</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="@Url.Action("Index", "Equipos")"><i class="fa fa-mobile"></i> Equipos</a></li> 
+                                <li><a href="@Url.Action("Index", "Mail")"><i class="fa fa-envelope" aria-hidden="true"></i> Mailer</a></li>
+                                <li><a href="reporte.aspx"><i class="fa fa-list-ol" aria-hidden="true"></i> Reporte</a></li>
+                                <li><a href="@Url.Action("Index", "Banner")"><i class="fa fa-file-image-o" aria-hidden="true"></i> Banner promociones</a></li>
+                                <li><a href="notificaciones.aspx"><i class="fa fa-bell" aria-hidden="true"></i> Push Notification</a></li>
+                                <li><a href="sms.aspx"><i class="fa fa-comments" aria-hidden="true"></i> SMS</a></li>
                                 <li>
                                     <a><i class="fa fa-bar-chart-o"></i> Estad&iacute;sticas<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
@@ -87,8 +85,6 @@
                                         <li><a href="@Url.Action("Index", "Planes")">Planes</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="sms.aspx"><i class="fa fa-comments" aria-hidden="true"></i> SMS</a></li>
-                                <li><a href="mailer.aspx"><i class="fa fa-envelope" aria-hidden="true"></i> Mailer</a></li>
                                 <li><a href="historial.aspx"><i class="fa fa-history" aria-hidden="true"></i> Historial</a></li>
                             </ul>
                         </div>
@@ -166,6 +162,7 @@
 <script src="@Url.Content("~/Content/vendors/pdfmake/build/vfs_fonts.js")"></script>
 <script src="@Url.Content("~/Content/js/bootbox.js")"></script>
 <script src="@Url.Content("~/Content/js/fileinput.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js//bootstrap-filestyle.min.js")"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="@Url.Content("~/Content/build/js/custom.min.js")"></script>
@@ -445,6 +442,11 @@
           });
 
           TableManageButtons.init();
+      });
+</script>
+<script>
+      $(document).ready(function () {
+          $(":file").filestyle({ buttonName: "btn-primary" });
       });
 </script>
 </html>
